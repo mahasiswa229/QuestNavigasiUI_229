@@ -24,7 +24,7 @@ fun DataApp(
             navController = navController,
             startDestination = Navigasi.Formulir.name,
 
-            modifier = Modifier.padding( paddingValues = isiRuang)
+            modifier= Modifier.padding( paddingValues = isiRuang)
         ){
             composable (route = Navigasi.Formulir.name) {
                 FormIsian(
@@ -41,4 +41,10 @@ fun DataApp(
 
         }
     }
+}
+
+private fun cancelAndBackToFormulir(
+    navController: NavHostController
+){
+    navController.popBackStack(route = Navigasi.Formulir.name. inclusive = false)
 }
