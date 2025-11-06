@@ -29,7 +29,7 @@ import com.example.navigasiku.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
-    onBackBtnClick: () -> Unit
+    OnBackBtnClick: () -> Unit
 ){
     val items = listOf(
         Pair(first = stringResource(id = R.string.nama_lengkap), second = "Contoh Nama"),
@@ -80,7 +80,7 @@ fun TampilData(
                 Spacer(modifier = Modifier.height(height = 10.dp))
                 Button(
                     modifier = Modifier.fillMaxWidth(),
-                    onClick = onBackBtnClick
+                    onClick = OnBackBtnClick
                 ) {
                     Text(text = stringResource(id = R.string.back))
                 }
