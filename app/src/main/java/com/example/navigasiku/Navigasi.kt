@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import java.lang.reflect.Modifier
 
@@ -21,6 +22,18 @@ fun DataApp(
     Scaffold { isiRuang ->
         NavHost(
             navController = navController,
-        )
+            startDestination = Navigasi.Formulir.name,
+
+            modifier = Modifier.padding( paddingValues = isiRuang)
+        ){
+            composable (route = Navigasi.Formulir.name) {
+                FormIsian(
+                    OnSubmitBtnClick = {
+                        navController.navigate(route = Navigasi.Detail.name)
+                    }
+                )
+            }
+
+        }
     }
 }
